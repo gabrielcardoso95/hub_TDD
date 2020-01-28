@@ -17,7 +17,7 @@ public class Screenshot {
     }
     
     public static void PrintScreenshot(WebDriver driver, String nome) throws InterruptedException{
-    	Thread.sleep(1000);
+    	Thread.sleep(800);
         File file = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         
         try {

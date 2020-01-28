@@ -12,10 +12,16 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_TDD.utility.Screenshot;
 
 public class ProdutoIncorretoCadastrado {
 public static WebDriver driver;
+ExtentReports extensao;
+ExtentTest logger;
 	
 	@BeforeMethod
 	public void beforeMethod() {
@@ -27,6 +33,10 @@ public static WebDriver driver;
 	
 	@Test
 	public void pesquisaProduto() throws Exception {
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("target/reports/ProdutoIncorretoCadastrado.html");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("ProdutoIncorretoCadastrado");
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"follow\"]/a[3]/img")));
 		driver.findElement(By.id("details_10")).click();
@@ -36,6 +46,7 @@ public static WebDriver driver;
 	
 	@AfterMethod
 	public void afterMethod() throws Exception {
+		extensao.flush();
 		driver.quit();
 	}
 }

@@ -12,11 +12,17 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_TDD.methods.Register_Action;
 import br.com.rsinet.hub_TDD.utility.Screenshot;
 
 public class ConsultaProdutoInvalidoTest {
 	public static WebDriver driver;
+	ExtentReports extensao;
+    ExtentTest logger;
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -28,6 +34,10 @@ public class ConsultaProdutoInvalidoTest {
 
 	@Test
 	public void produtoNaoEncontrado() throws Exception {
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("target/reports/ProdutoNaoEncontrado.html");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("ProdutoNaoEncontrado");
 		String nome = "ProdutoNaoEncontrado";
 		Register_Action.pesquisaProdutoInvalido(driver);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -38,6 +48,7 @@ public class ConsultaProdutoInvalidoTest {
 
 	@AfterMethod
 	public void afterMethod() {
+		extensao.flush();
 		driver.quit();
 	}
 }

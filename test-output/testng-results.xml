@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17117" started-at="2020-01-28T14:12:30 BRT" finished-at="2020-01-28T14:12:48 BRT">
+  <suite name="Default suite" duration-ms="17530" started-at="2020-01-28T15:43:25 BRT" finished-at="2020-01-28T15:43:42 BRT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17117" started-at="2020-01-28T14:12:30 BRT" finished-at="2020-01-28T14:12:48 BRT">
+    <test name="Default test" duration-ms="17530" started-at="2020-01-28T15:43:25 BRT" finished-at="2020-01-28T15:43:42 BRT">
       <class name="br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado@1e6d1014]" name="beforeMethod" is-config="true" duration-ms="10889" started-at="2020-01-28T14:12:30 BRT" finished-at="2020-01-28T14:12:41 BRT">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado@1e6d1014]" name="beforeMethod" is-config="true" duration-ms="11241" started-at="2020-01-28T15:43:25 BRT" finished-at="2020-01-28T15:43:36 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="pesquisaProduto()[pri:0, instance:br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado@1e6d1014]" name="pesquisaProduto" duration-ms="5598" started-at="2020-01-28T14:12:41 BRT" finished-at="2020-01-28T14:12:47 BRT">
+        <test-method status="PASS" signature="pesquisaProduto()[pri:0, instance:br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado@1e6d1014]" name="pesquisaProduto" duration-ms="5414" started-at="2020-01-28T15:43:36 BRT" finished-at="2020-01-28T15:43:42 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pesquisaProduto -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado@1e6d1014]" name="afterMethod" is-config="true" duration-ms="604" started-at="2020-01-28T14:12:47 BRT" finished-at="2020-01-28T14:12:48 BRT">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:br.com.rsinet.hub_TDD.tests.ProdutoIncorretoCadastrado@1e6d1014]" name="afterMethod" is-config="true" duration-ms="848" started-at="2020-01-28T15:43:42 BRT" finished-at="2020-01-28T15:43:42 BRT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

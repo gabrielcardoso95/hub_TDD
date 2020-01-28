@@ -9,12 +9,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import br.com.rsinet.hub_TDD.methods.Register_Action;
 import br.com.rsinet.hub_TDD.utility.ExcelUtils;
 import br.com.rsinet.hub_TDD.utility.Screenshot;
 
 public class ConsultaPorCampoDePesquisaTest {
 	private static WebDriver driver;
+	ExtentReports extensao;
+    ExtentTest logger;
 	
 	@BeforeMethod
 	public void beforeMethod() {
@@ -26,7 +32,11 @@ public class ConsultaPorCampoDePesquisaTest {
 	
 	@Test
 	public void devePesquisarProduto() throws Exception {
-		String nome = "ProdutoAdicionadoComSucesso";
+		ExtentHtmlReporter reporte = new ExtentHtmlReporter("target/reports/ProdutoAdicionadoComSucessoPelaBarra.html");
+        extensao = new ExtentReports();
+        extensao.attachReporter(reporte);
+        logger = extensao.createTest("ProdutoAdicionado");
+		String nome = "ProdutoAdicionadoComSucessoPelaBarra";
 		Register_Action.pesquisaProduto(driver);
 		Assert.assertTrue(driver.getPageSource().contains(ExcelUtils.getCellData(1, 1)));
 		Screenshot.PrintScreenshot(driver, nome);
@@ -34,6 +44,7 @@ public class ConsultaPorCampoDePesquisaTest {
 	
 	@AfterMethod
 	public void afterMethod() {
+		extensao.flush();
 		driver.quit();
 	}
 }
